@@ -1,0 +1,48 @@
+<h1 class="text-center">Liste des produits</h1>
+<p-button label="Créer produit" (onClick)="onCreate()" class="block text-center"/>
+
+<div class="card">
+<p-dataView #dv [value]="products()" [rows]="5" >
+
+        <ng-template pTemplate="list" let-products>
+            <div class="grid grid-cols-12 gap-4 grid-nogutter">
+                <div class="col-span-12" *ngFor="let item of products; let first = first" class="col-span-12">
+                    <div
+                        class="flex flex-col sm:flex-row sm:items-center p-6 gap-4"
+                        [ngClass]="{ 'border-t border-surface-200 dark:border-surface-700': !first }"
+                    >
+                        
+                        <div class="flex flex-col md:flex-row justify-between md:items-center flex-1 gap-6">
+                            <div class="flex flex-row md:flex-col justify-between items-start gap-2">
+                                <div>
+                                    <div class="text-lg font-medium text-surface-900 dark:text-surface-0 mt-2">{{ item.name }}</div>
+                                </div>
+                               
+                            </div>
+                            <div class="flex flex-col md:items-end gap-8">
+                               
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center p-6 gap-4">
+                        <p-button label="Modifier" severity="secondary" (onClick)="onUpdate(item)"/>
+                        <p-button label="Supprimer" severity="danger" (onClick)="onDelete(item)" />
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+</p-dataView>
+<p-dialog [(visible)]="isDialogVisible"
+    [style]="{ width: '50vw' }"
+    header="Ajout/Edition produit">
+    <app-product-form
+        [product]="editedProduct()"
+        (save)="onSave($event)"
+        (cancel)="onCancel()"
+    />
+</p-dialog>
+
+
+
