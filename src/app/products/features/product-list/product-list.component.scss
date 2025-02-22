@@ -16,7 +16,7 @@
   height: 100%;
   object-fit: cover;
 } */
- 
+
 /* .box {
   width: 500px;
   display: flex;
@@ -24,4 +24,30 @@
   justify-content: space-between;
 } */
 
- 
+.col-span-12{
+  background-color: black;
+  color: white;
+}
+.item img{
+  width: 100%;
+}
+.item{
+
+display: inline-block;
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  width: 23%;
+  margin: 5%;
+}
+
+.p-message-detail{
+  padding: 15px;
+}
+
+.btn{
+  display: flex;
+  gap : 14px ;
+}
+
+.btn_modifier button  {
+
+}

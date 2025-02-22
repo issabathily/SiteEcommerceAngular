@@ -1,1 +1,67 @@
-//
+ :host {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+/* .product-image {
+  height: 150px;
+  overflow: hidden;
+}
+
+.product-image img {
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+/* .box {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.col-span-12{
+  background-color: black;
+  color: white;
+}
+.item img{
+  width: 100%;
+}
+.item{
+  transition: all 0.8s;
+display: inline-block;
+box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  width: 23%;
+  margin: 5%;
+}
+
+.p-message-detail{
+  padding: 15px;
+}
+
+.btn{
+  display: flex;
+  gap : 14px ;
+}
+
+.btn_modifier button  {
+
+}
+
+.addpoduit{
+  padding: 5px;
+  width: 200px;
+  margin: 1% 5% 5% 5%;
+border-radius: 5px;
+  border : none;
+  background-color: black;
+  color: white;
+
+}
+.item:hover{
+scale: 1.03;
+}

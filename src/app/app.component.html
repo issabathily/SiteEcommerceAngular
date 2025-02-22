@@ -1,23 +1,78 @@
-<p-toolbar [style]="{ height: '100px' }">
+<p-toolbar [style]="{ height: '60px' }">
     <div class="p-toolbar-group-start">
-        <img src="assets/icons/icon-72x72.png" alt="logo" />
+        <img width="40px" src="assets/icons/icon-72x72.png" alt="logo" />
     </div>
     <div class="p-toolbar-group-center">
         {{ title }}
     </div>
     <div class="p-toolbar-group-end">
-        <i class="pi pi-shopping-cart btn-shopp" style="font-size: 2rem"
-         pBadge [value]="0" severity="danger"
-         (click)="onCheckOut()"
-         ></i>
+
+         <button onclick="document.getElementById('maBoite').showModal()">
+
+        <i   class="pi pi-shopping-cart btn-shopp" style="font-size: 1.5rem"
+         pBadge [value]="cart()?.length || 0" severity="danger"></i>
+
+           </button>
     </div>
+
 </p-toolbar>
-<p-splitter
-    [panelSizes]="[20, 80]"
-    [style]="{ height: 'calc(100vh - 100px)' }">
+
+
+ <dialog id="maBoite">
+
+        <button class="fermer" onclick="document.getElementById('maBoite').close()">Fermer</button>
+
+<div class="contener">
+
+<div class="card">
+  <p-dataView  [value]="cart()" [rows]="5">
+    <ng-template let-cartItem pTemplate="list">
+      <div *ngFor="let cartItem of cartItem" class="cart-item">
+        <div *ngIf="cartItem">
+          <div class="flex" >
+
+            <div class="img">
+             <img *ngIf="cartItem.image" [src]="'assets/images/' + cartItem.image" alt="moo" >
+</div>
+
+            &nbsp;&nbsp;&nbsp;
+            <div class="montext">
+
+            <h3>{{ cartItem.name }}</h3>
+
+
+
+            <p>Prix : {{  cartItem.price | currency:'EUR'  }}</p>
+
+
+
+              <p>  <span (click)="Onquantite()" style="padding: 2px 7px;background-color: white;color: black;border-radius: 1px">+</span></p>
+            <button (click)="removeFromCart(cartItem.id)" class="remove-button">
+              <i class="fa-solid fa-trash"></i> Retirer
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+        </div>
+
+    </ng-template>
+  </p-dataView>
+
+   </div>
+
+</div>
+<p style="font-family:sans-serif;font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores debitis delectus dolor ea et minus non quam quasi quod.</p>
+
+   <button class="btn"> Commander <i class="fa-solid fa-thumbs-up"></i> </button>  &nbsp;&nbsp;&nbsp; <button class="btn2"> Annuler </button>
+
+ </dialog>
+<p-splitter [panelSizes]="[20, 80]" [style]="{ height: 'calc(100vh - 100px)'}">
     <ng-template pTemplate>
         <div class="w-full">
-            <app-panel-menu />
+            <app-panel-menu   />
         </div>
     </ng-template>
     <ng-template pTemplate>
@@ -26,3 +81,21 @@
         </div>
     </ng-template>
 </p-splitter>
+
+
+
+
+
+
+
+
+
+<script>
+   function ouvrirBoite() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        function fermerBoite() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+</script>

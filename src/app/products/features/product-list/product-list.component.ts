@@ -36,7 +36,7 @@ const emptyProduct: Product = {
 export class ProductListComponent implements OnInit {
 
   constructor() {}
-  
+
   private readonly productsService = inject(ProductsService);
   public readonly products = this.productsService.products;
 

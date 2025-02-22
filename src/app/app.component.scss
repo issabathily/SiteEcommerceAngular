@@ -6,3 +6,102 @@
 .btn-shopp {
   cursor: pointer;
 }
+
+.card{
+  background-color: #3333;
+
+}
+.cart-item div img{
+border-radius: 5px;
+width: 100px;
+  object-fit: cover;
+
+}
+
+.cart-item .montext{
+ width: 226px;
+
+
+}
+
+
+.cart-item{
+
+  border-radius: 5px;
+    margin: 3%;
+  background-color: black;
+padding: 5px;
+width: 40%;
+display: inline-block;
+
+color: white;
+
+
+
+}
+.cart-item button{
+  width: 150px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
+}
+
+.flex{
+
+
+
+display: flex;
+
+}
+.contener{
+
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+
+}
+
+
+        dialog {
+
+          width:80%;
+
+position: relative;
+          left: 10%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+        }
+
+        button {
+
+            padding: 5px 10px;
+            border: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+
+        .fermer {
+position: relative;
+          left: 93%;
+
+        }
+.btn{
+  margin-left: 20px;
+  padding: 8px;
+  width: 226px;
+}
+
+.btn2{
+  color: black;
+  border: solid 1px black;
+  padding: 8px;
+  width: 226px;
+  background-color: white;
+}

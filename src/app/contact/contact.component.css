@@ -1,0 +1,37 @@
+form{
+  margin : 10% ;
+  color : #333333;
+  position :relative;
+  left: 20%;
+}
+
+form  div {
+  flex-direction: column;
+}
+
+form input {
+  width: 500px ;
+  height : 40px;
+}
+
+form textarea {
+  width: 500px ;
+  height : 100px;
+}
+
+form button {
+    width: 500px ;
+  height : 40px;
+  border: solid 1px rgb(0, 0, 0);
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
+
+form h2{
+
+  position :relative;
+  left: 20%;
+}
+small{
+  color : red;
+}
