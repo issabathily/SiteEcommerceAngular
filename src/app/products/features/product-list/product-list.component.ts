@@ -24,6 +24,7 @@ const emptyProduct: Product = {
   rating: 0,
   createdAt: 0,
   updatedAt: 0,
+    augemente: 1
 };
 
 @Component({

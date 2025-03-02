@@ -21,8 +21,8 @@ export class PanelMenuComponent {
         routerLink: ['/home']
       },
       {
-        label: 'Produits',
-        icon: 'pi pi-barcode',
+        label: 'Admin',
+        icon: 'pi pi-shopping-bag',
         routerLink: ['/products/list']
       },
     {
@@ -38,7 +38,7 @@ export class PanelMenuComponent {
     } ,
     {
       label : 'Informatique  ',
-      icon: 'pi pi-heart',
+      icon: '',
       routerLink: ['/contact']
     } ,
     {

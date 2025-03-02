@@ -1,8 +1,11 @@
 form{
   margin : 10% ;
-  color : #333333;
+  color : black;
   position :relative;
   left: 20%;
+
+
+
 }
 
 form  div {
@@ -35,3 +38,4 @@ form h2{
 small{
   color : red;
 }
+

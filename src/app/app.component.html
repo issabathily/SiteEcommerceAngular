@@ -1,10 +1,26 @@
 <p-toolbar [style]="{ height: '60px' }">
-    <div class="p-toolbar-group-start">
-        <img width="40px" src="assets/icons/icon-72x72.png" alt="logo" />
-    </div>
+
+
+
+
+
+
+
+
     <div class="p-toolbar-group-center">
         {{ title }}
     </div>
+
+
+
+ <div [ngStyle]="{display: getblog()}" class="dialogue">
+    <p style="text-align:center;"> Veiller vous Identifier </p>
+
+    <div class="buton">  <button (click)="identification()"> S'identifier </button> </div>
+  </div>
+
+
+
     <div class="p-toolbar-group-end">
 
          <button onclick="document.getElementById('maBoite').showModal()">
@@ -46,7 +62,7 @@
 
 
 
-              <p>  <span (click)="Onquantite()" style="padding: 2px 7px;background-color: white;color: black;border-radius: 1px">+</span></p>
+              <p>  <button (click)="increment(cartItem.id)" style="padding: 2px 7px;background-color: white;color: black;border-radius: 1px">+</button> {{cartItem.augemente}}     <span  style="padding: 2px 7px;background-color: white;color: black;border-radius: 1px" (click)="decrement(cartItem.id)">-</span></p>
             <button (click)="removeFromCart(cartItem.id)" class="remove-button">
               <i class="fa-solid fa-trash"></i> Retirer
             </button>
@@ -73,17 +89,23 @@
     <ng-template pTemplate>
         <div class="w-full">
             <app-panel-menu   />
+
+
+
         </div>
+
+
     </ng-template>
     <ng-template pTemplate>
-        <div class="w-full app-content">
+
+
+        <div [ngStyle]="{opacity: get_opcity()}" class="w-full app-content">
             <router-outlet></router-outlet>
         </div>
+
     </ng-template>
+
 </p-splitter>
-
-
-
 
 
 
@@ -99,3 +121,5 @@
             document.getElementById('overlay').style.display = 'none';
         }
 </script>
+
+

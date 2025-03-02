@@ -49,7 +49,8 @@ export class ProductsService {
         );
     }
 
-    /*** ✅ Gestion du Panier avec LocalStorage ***/
+
+    /*** ✅ Gestion du Panier  ***/
 
     public addToCart(product: Product): void {
         this._cart.update(cart => {
@@ -77,4 +78,33 @@ export class ProductsService {
         const cart = localStorage.getItem("cart");
         return cart ? JSON.parse(cart) : [];
     }
+
+
+    // *** buton augementer panier ***
+
+    public incrementQuantity(productId: number): void {
+    this._cart.update(cart => {
+        const updatedCart = cart.map(product =>
+            product.id === productId ? { ...product, augemente: (product.augemente || 1) + 1 } : product
+        );
+        this.saveCartToLocalStorage(updatedCart);
+        return updatedCart;
+    });
 }
+
+public decrementQuantity(productId: number): void {
+    this._cart.update(cart => {
+        const updatedCart = cart.map(product =>
+            product.id === productId ? { ...product, augemente: Math.max((product.augemente || 1) - 1, 0) } : product
+        )
+
+        this.saveCartToLocalStorage(updatedCart);
+        return updatedCart;
+    });
+}
+
+}
+
+
+
+

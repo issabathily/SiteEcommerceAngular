@@ -13,4 +13,6 @@ export interface Product {
     rating: number;
     createdAt: number;
     updatedAt: number;
+    augemente:number;
+
 }

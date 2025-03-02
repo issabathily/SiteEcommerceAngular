@@ -20,18 +20,35 @@ import { Product } from "./products/data-access/product.model";
 })
 export class AppComponent implements OnInit {
   title = "SDIAGNE SHOP";
+  identifier = true
   private productsService = inject(ProductsService);
   cart = this.productsService.cart; //// 🛒 Signal du panier
 
 
   // Calculer la quantité totale dans le panier
   quantPanier = computed(() => this.cart().length);
+  quantite=0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+
+    setTimeout(()=>{
+this.identifier=false;
+    },4000)
+
+
+
+  }
+
+
 
   ngOnInit() {
     console.log("Panier chargé :", this.cart());
   }
+
+
+  increment(productId: number) {
+    this.productsService.incrementQuantity(productId);
+}
 
   removeFromCart(productId: number) {
     this.productsService.removeFromCart(productId);
@@ -41,9 +58,31 @@ export class AppComponent implements OnInit {
     console.log("Passer à la caisse avec :", this.cart());
   }
 
-  Onquantite() {
 
 
+   getblog(){
+    if (this.identifier){
+      return 'none'
+    }
+    else return 'block'
   }
+
+  get_opcity() {
+    if(this.identifier){
+        return '100%'
+    }
+    else return '5%'
+  }
+
+  identification() {
+    this.identifier = true;
+    this.router.navigate(['/contact']);
+  }
+
+
+
+decrement(productId: number) {
+    this.productsService.decrementQuantity(productId);
+}
 
 }

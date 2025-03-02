@@ -1,13 +1,13 @@
-
+<i class="fa-regular fa-user"></i> {{this.nom}}
 
 <form [formGroup]="myForm">
   <h2 > Inscription </h2>
-  <div>
+  <div class="input">
 
     <!-- Nom  -->
     <label  > NOM </label>
     <br>
-    <input formControlName ='Nom'>
+    <input  [(ngModel)]="this.nom" formControlName ='Nom'>
      <div *ngIf="myForm.get('Nom')?.invalid && myForm.get('Nom')?.touched">
         <small [ngStyle]="{color:getcolor()}" *ngIf="myForm.get('Nom')?.errors?.['required']">Le nom est requis.</small>
      </div>
@@ -27,7 +27,7 @@
   </div>
 
 
-      <!-- Messages   -->
+      <!-- | Messages |   -->
 <div>
   <label> Messages </label>
   <br>
