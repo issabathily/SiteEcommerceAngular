@@ -1,53 +1,217 @@
+/* Style global */
  :host {
     display: block;
     height: 100%;
     overflow: auto;
 }
-
-/* .product-image {
-  height: 150px;
-  overflow: hidden;
+.text-center {
+    text-align: center;
 }
 
-.product-image img {
-  margin-top: 5px;
-  margin-left: 10px;
-  width: 90%;
-  height: 100%;
-  object-fit: cover;
-} */
-
-/* .box {
-  width: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
-
-.col-span-12{
-  background-color: black;
-  color: white;
+h1{
+   background:red;
 }
-.item img{
-  width: 100%;
-}
-.item{
-
-display: inline-block;
-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  width: 23%;
-  margin: 5%;
+h1.text-center {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+    font-size: 2.2rem;
+    margin: 1.5rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background:black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.p-message-detail{
-  padding: 15px;
+/* Bouton "Créer produit" */
+.p-button.block.text-center {
+    display: block;
+    margin: 0 auto 1.5rem;
+    background: #2980b9;
+    border: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(41, 128, 185, 0.3);
+    transition: all 0.3s ease;
 }
 
-.btn{
-  display: flex;
-  gap : 14px ;
+.p-button.block.text-center:hover {
+    background: #2471a3;
+    transform: scale(1.05);
 }
 
-.btn_modifier button  {
+/* Carte globale (sans défilement) */
 
+
+/* Conteneur interne pour la liste */
+.p-dataview .p-dataview-content {
+    display: block; /* Retour à block pour inline-block des items */
+}
+
+/* Liste des produits */
+.item {
+    display: inline-block; /* Alignement côte à côte */
+    vertical-align: top; /* Alignement en haut */
+    width: 220px; /* Largeur fixe pour cohérence */
+    padding: 0.8rem;
+    margin: 0.5rem; /* Espacement autour de chaque item */
+    background: rgba(245, 245, 245, 0.89);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center; /* Centre le contenu dans chaque item */
+}
+
+.item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Image */
+.item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Contenu des items */
+.p-message-detail {
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.p-message-detail > div {
+    margin: 0.2rem 0;
+}
+
+/* Boutons dans les items */
+.btn {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.p-button[severity="success"] {
+    background: #2ecc71;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(46, 204, 113, 0.2);
+    transition: all 0.3s ease;
+}
+
+.p-button[severity="success"]:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+}
+
+.p-button.btn_supprimer {
+    background: #e74c3c;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
+    transition: all 0.3s ease;
+}
+
+.p-button.btn_supprimer:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Dialog */
+.p-dialog {
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.p-dialog .p-dialog-header {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.p-dialog .p-dialog-content {
+    padding: 1.2rem;
+}
+
+/* Animation d'apparition */
+.item {
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card {
+        max-width: 600px; /* Réduction pour tablettes */
+        margin: 0 1rem;
+    }
+
+    .item {
+        width: 180px; /* Plus petit pour tablettes */
+        margin: 0.4rem;
+    }
+
+    h1.text-center {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 100%; /* Pleine largeur sur mobile */
+        margin: 0 0.5rem;
+    }
+
+    .item {
+        width: 140px; /* Encore plus compact sur petits écrans */
+        margin: 0.3rem;
+    }
+
+    .p-button.block.text-center {
+        padding: 0.6rem 1.2rem;
+    }
+
+
+
+    .p-message-detail {
+        font-size: 0.8rem;
+    }
+
+    .item img {
+        width: 60px;
+        height: 60px;
+    }
 }

@@ -50,7 +50,7 @@ export class ProductsService {
     }
 
 
-    /*** ✅ Gestion du Panier  ***/
+    /***  Gestion du Panier  ***/
 
     public addToCart(product: Product): void {
         this._cart.update(cart => {

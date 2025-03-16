@@ -10,13 +10,15 @@ import { CommonModule } from "@angular/common";
 import { ProductsService } from "./products/data-access/products.service";
 import { DataViewModule } from "primeng/dataview";
 import { Product } from "./products/data-access/product.model";
+import {ChipsModule} from "primeng/chips";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
   standalone: true,
-  imports: [RouterModule, SplitterModule, ToolbarModule, PanelMenuComponent, BadgeModule, CommonModule, DataViewModule],
+  imports: [RouterModule, SplitterModule, ToolbarModule, PanelMenuComponent, BadgeModule, CommonModule, DataViewModule, ChipsModule, FormsModule],
 })
 export class AppComponent implements OnInit {
   title = "SDIAGNE SHOP";
@@ -28,6 +30,7 @@ export class AppComponent implements OnInit {
   // Calculer la quantité totale dans le panier
   quantPanier = computed(() => this.cart().length);
   quantite=0;
+  searchText: any;
 
   constructor(private router: Router) {
 

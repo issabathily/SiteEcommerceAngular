@@ -15,7 +15,9 @@ export const APP_ROUTES: Routes = [
   },
   { path: "", redirectTo: "home", pathMatch: "full" },
 
-  {path : 'contact', component: ContactComponent, },
+
+  {path : 'contact', component: ContactComponent,title  :'Contac' },
+
     {path : 'app', component: AppComponent, },
 
 ];

@@ -172,10 +172,26 @@ color: black;
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
+  text-align: center;
 }
 
 
 
-button {
+
+button{
   cursor: pointer;
+
+}
+input:focus{
+  outline: none;
+
+}
+input{
+
+  padding: 10px;
+  border-radius: 20px;
+border: solid 1px black;
+  width: 400px;
+
+
 }

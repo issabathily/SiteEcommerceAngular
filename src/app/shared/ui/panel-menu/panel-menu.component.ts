@@ -26,8 +26,8 @@ export class PanelMenuComponent {
         routerLink: ['/products/list']
       },
     {
-      label : 'contact ',
-      icon: 'pi pi-user',
+      label : 'Contact ',
+      icon : 'pi pi-user',
       routerLink: ['/contact']
     }
     ,

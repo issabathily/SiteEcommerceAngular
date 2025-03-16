@@ -1,36 +1,47 @@
+<div class="div">
+ <!--  <input
+    type="text"
+    pInputText
+    placeholder="Rechercher un produit..."
+    [(ngModel)]="searchText"
+    (input)="updatePage()"  />
+</div>
+-->
+<p-dataView #dv
+  [value]="products"
 
+  [paginator]="products"
+  [rows]="rowsPerPage"
+  [totalRecords]="totalRecords"
 
+  (onPageChange)="paginate($event)">
 
-<p-dataView #dv [value]="products" [paginator]="true" [rows]="5">
-
-
-    <ng-template pTemplate="list" let-products>
+  <ng-template pTemplate="list" let-products>
+    <div>
+      <div style="position:relative" class="item" *ngFor="let item of products">
         <div>
-            <div style="position:relative" class="item" *ngFor="let item of products">
-                <div>
-                    <img src="assets/images/{{item.image}}" alt="">
-                    <div style="position: absolute; top: -5%; transform: translate(5%, 100%); background-color: #cb2727; color: white; padding: 5px; border-radius: 5px">
-                        {{item.inventoryStatus}}
-                    </div>
-                    <div>
-                        <div>
-                            <div style="color: black; margin-left: 5px">{{item.name}}</div>
-                            <div class="p-message-detail">
-                                <div> Categories : {{item.category}}</div>
-                                <div> Quantité: {{item.quantity}} </div>
-                                <div> Date: {{item.createdAt | date}} </div>
-                                Prix : {{item.price | currency:'EUR'}}<br>
-                                <small> {{item.rating}} <i style="color:gold" class="fa-solid fa-star"></i> </small>
-                            </div>
-                            <button [disabled]="test(item.quantity)" (click)="addToCart(item)" class="addpoduit">
-                                <i class="fa-solid fa-cart-shopping"></i>   Ajouter au Panier
-                            </button>
-                        </div>
-                    </div>
-                </div>
+          <img src="assets/images/{{item.image}}" alt="">
+          <div style="position: absolute; top: -5%; transform: translate(5%, 100%); background-color: #cb2727; color: white; padding: 5px; border-radius: 5px">
+            {{item.inventoryStatus}}
+          </div>
+          <div>
+            <div>
+              <div style="color: black; margin-left: 5px">{{item.name}}</div>
+              <div class="p-message-detail">
+                <div> Categories : {{item.category}}</div>
+                <div> Quantité: {{item.quantity}} </div>
+                <div> Date: {{item.createdAt | date}} </div>
+                Prix : {{item.price | currency:'EUR'}}<br>
+                <small> {{item.rating}} <i style="color:gold" class="fa-solid fa-star"></i> </small>
+              </div>
+              <button [disabled]="item.quantity === 0" (click)="addToCart(item)" class="addpoduit">
+                <i class="fa-solid fa-cart-shopping"></i>
+                {{ item.quantity === 0 ? '🚫' : 'Ajouter au Panier' }}
+              </button>
             </div>
+          </div>
         </div>
-    </ng-template>
+      </div>
+    </div>
+  </ng-template>
 </p-dataView>
-
-

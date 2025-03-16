@@ -27,7 +27,7 @@ this.myForm=this.fb.group({
 
  sucsee() {
     this.route.navigate(['/'])
-      alert(` ${this.myForm.value.name} Success ✅ `);
+      alert(`demande evoyer avec  Success ✅ `);
   }
  nom! : string;
 

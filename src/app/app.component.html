@@ -1,11 +1,4 @@
-<p-toolbar [style]="{ height: '60px' }">
-
-
-
-
-
-
-
+<p-toolbar  [style]="{ height: '60px' }">
 
     <div class="p-toolbar-group-center">
         {{ title }}
@@ -13,10 +6,13 @@
 
 
 
- <div [ngStyle]="{display: getblog()}" class="dialogue">
+
+
+
+ <div    [ngStyle]="{display: getblog()}" class="dialogue">
     <p style="text-align:center;"> Veiller vous Identifier </p>
 
-    <div class="buton">  <button (click)="identification()"> S'identifier </button> </div>
+    <div  class="buton">  <button (click)="identification()"> S'identifier </button> </div>
   </div>
 
 
@@ -54,7 +50,7 @@
             &nbsp;&nbsp;&nbsp;
             <div class="montext">
 
-            <h3>{{ cartItem.name }}</h3>
+            <h3>{{cartItem.name }}</h3>
 
 
 
@@ -116,7 +112,6 @@
    function ouvrirBoite() {
             document.getElementById('overlay').style.display = 'flex';
         }
-
         function fermerBoite() {
             document.getElementById('overlay').style.display = 'none';
         }

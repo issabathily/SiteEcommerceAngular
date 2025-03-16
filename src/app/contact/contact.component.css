@@ -1,41 +1,131 @@
-form{
-  margin : 10% ;
-  color : black;
-  position :relative;
-  left: 20%;
-
-
-
+/* Style global du formulaire */
+form {
+    max-width: 700px; /* Augmentation de la largeur (avant: 500px) */
+    margin: 0 auto;
+    padding: 1.5rem; /* Réduction du padding vertical (avant: 2rem) */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-form  div {
-  flex-direction: column;
+/* Titre */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem; /* Réduction (avant: 2rem) */
+    font-size: 1.6rem; /* Légère réduction (avant: 1.8rem) */
+    font-weight: 600;
 }
 
-form input {
-  width: 500px ;
-  height : 40px;
+/* Conteneur des inputs */
+.input {
+    margin-bottom: 1rem; /* Réduction (avant: 1.5rem) */
 }
 
-form textarea {
-  width: 500px ;
-  height : 100px;
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 0.3rem; /* Réduction (avant: 0.5rem) */
+    color: #555;
+    font-size: 0.85rem; /* Légère réduction (avant: 0.9rem) */
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
-form button {
-    width: 500px ;
-  height : 40px;
-  border: solid 1px rgb(0, 0, 0);
-  color: white;
-  background-color: rgb(0, 0, 0);
+/* Inputs et textarea */
+input, textarea {
+    width: 100%;
+    padding: 0.6rem; /* Réduction (avant: 0.8rem) */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95rem; /* Légère réduction (avant: 1rem) */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-form h2{
-
-  position :relative;
-  left: 20%;
-}
-small{
-  color : red;
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
+textarea {
+    min-height: 80px; /* Réduction (avant: 100px) */
+    resize: vertical;
+}
+
+/* Messages d'erreur */
+small {
+    display: block;
+    margin-top: 0.2rem; /* Réduction (avant: 0.3rem) */
+    font-size: 0.75rem; /* Légère réduction (avant: 0.8rem) */
+    transition: opacity 0.3s ease;
+}
+
+/* Bouton */
+button {
+    width: 100%;
+    padding: 0.7rem; /* Réduction (avant: 0.9rem) */
+    margin-top: 1rem; /* Réduction (avant: 1.5rem) */
+    border: none;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    font-size: 0.95rem; /* Légère réduction (avant: 1rem) */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+    background: black;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Icône utilisateur */
+.fa-user {
+    margin-right: 0.5rem;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    form {
+        padding: 1rem; /* Réduction (avant: 1.5rem) */
+        margin: 0.5rem; /* Réduction (avant: 1rem) */
+    }
+
+    h2 {
+        font-size: 1.3rem; /* Réduction (avant: 1.5rem) */
+    }
+
+    input, textarea {
+        font-size: 0.85rem; /* Réduction (avant: 0.9rem) */
+    }
+
+    button {
+        padding: 0.6rem; /* Réduction (avant: 0.8rem) */
+    }
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form {
+    animation: fadeIn 0.5s ease-out;
+}
