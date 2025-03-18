@@ -15,8 +15,9 @@ html,
 body {
   margin: 0;
   background-color: var(--primary-bg-color);
-  color: var(--primary-font-color);
+  color: black;
   height: 100%;
+
 
   .transparent .navbar {
     display: none;
@@ -29,6 +30,7 @@ body {
 
     .navbar {
       .p-menu {
+
         top: 52px !important;
         left: unset !important;
         right: 5px !important;

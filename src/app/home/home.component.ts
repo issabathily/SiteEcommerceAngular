@@ -78,4 +78,7 @@ export class HomeComponent implements OnInit {
       product.category.toLowerCase().includes(this.searchText.toLowerCase())
     );
   }
+
+
+
 }

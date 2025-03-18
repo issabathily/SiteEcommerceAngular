@@ -1,40 +1,39 @@
-<i class="fa-regular fa-user"></i> {{this.nom}}
+<br>
+<br>
 
 <form [formGroup]="myForm">
-  <h2 > Inscription </h2>
-  <div class="input">
+  <h2>Inscription</h2>
 
-    <!-- Nom  -->
-    <label  > NOM </label>
-    <br>
-    <input  [(ngModel)]="this.nom" formControlName ='Nom'>
-     <div *ngIf="myForm.get('Nom')?.invalid && myForm.get('Nom')?.touched">
-        <small [ngStyle]="{color:getcolor()}" *ngIf="myForm.get('Nom')?.errors?.['required']">Le nom est requis.</small>
-     </div>
-
-    <!-- Mail   -->
-  <div>
-
-    <label> mail </label>
-    <br>
-    <input  formControlName="email">
-<div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
-        <small [ngStyle]="{color:getcolor()}" *ngIf="myForm.get('email')?.errors?.['required']">L'email est requis.</small>
-        <small [ngStyle]="{color:getcolor()}" *ngIf="myForm.get('email')?.errors?.['email']">Email invalide.</small>
-      </div>
+  <!-- Nom -->
+  <div class="input-group">
+    <label for="Nom">Nom Prenom </label>
+    <input id="Nom" formControlName="Nom"  placeholder="Entrez votre nom">
+    <div *ngIf="myForm.get('Nom')?.invalid && myForm.get('Nom')?.touched">
+      <small [ngStyle]="{color: getcolor()}">Le nom est requis.</small>
     </div>
-
   </div>
 
+  <!-- Email -->
+  <div class="input-group">
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" placeholder="Entrez votre email">
+    <div *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+      <small [ngStyle]="{color: getcolor()}">L'email est requis.</small>
+      <small [ngStyle]="{color: getcolor()}">Email invalide.</small>
+    </div>
+  </div>
 
-      <!-- | Messages |   -->
-<div>
-  <label> Messages </label>
-  <br>
-      <textarea formControlName="message">  </textarea>
-        <div *ngIf="myForm.get('message')?.invalid && myForm.get('message')?.touched">
-              <small [ngStyle]="{color:getcolor()}" *ngIf="myForm.get('message')?.errors?.['maxlength']">maximum 300 caratere .</small>
-      </div>
-      </div>
-  <button [ngStyle]="{color:getcolor()}" [ngStyle]="{background : color()}" type="submit" (click)="sucsee()" [disabled]="myForm.invalid">Envoyer</button>
+  <!-- Message -->
+  <div class="input-group">
+    <label for="message">Message</label>
+    <textarea id="message" formControlName="message" placeholder="Écrivez votre message"></textarea>
+    <div *ngIf="myForm.get('message')?.invalid && myForm.get('message')?.touched">
+      <small [ngStyle]="{color: getcolor()}">Maximum 300 caractères.</small>
+    </div>
+  </div>
+
+  <!-- Bouton -->
+  <button [ngStyle]="{color: getcolor()}" [ngStyle]="{background: color()}" type="submit" (click)="sucsee()" [disabled]="myForm.invalid">
+    Envoyer
+  </button>
 </form>

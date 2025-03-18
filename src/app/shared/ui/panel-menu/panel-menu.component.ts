@@ -9,8 +9,12 @@ import { PanelMenuModule } from 'primeng/panelmenu';
   template: `
       <p-panelMenu class="m"  [model]="items" styleClass="w-full" />
 
+      <style>
 
+
+      </style>
   `
+
 })
 export class PanelMenuComponent {
 
@@ -32,19 +36,10 @@ export class PanelMenuComponent {
     }
     ,
     {
-      label : 'Vetement ',
+      label : 'Produits ',
       icon: 'pi pi-heart',
-      routerLink: ['/contact']
+      routerLink: ['/home']
     } ,
-    {
-      label : 'Informatique  ',
-      icon: '',
-      routerLink: ['/contact']
-    } ,
-    {
-      label : ' wathch  ',
-      icon: 'pi ',
-      routerLink: ['/contact']
-    }
+
   ]
 }

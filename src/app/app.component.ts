@@ -88,4 +88,7 @@ decrement(productId: number) {
     this.productsService.decrementQuantity(productId);
 }
 
+  messages() {
+    alert('Votre Demande est en cour de traitement  ✅');
+  }
 }

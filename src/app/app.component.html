@@ -1,11 +1,8 @@
-<p-toolbar  [style]="{ height: '60px' }">
+<p-toolbar  [style]="{ height: '60px', backgroundColor: '#171616', color: 'white' }">
 
     <div class="p-toolbar-group-center">
-        {{ title }}
+      <img class="imgs" width="50px" src="assets/images/shopping_10112444.png" alt="">
     </div>
-
-
-
 
 
 
@@ -58,7 +55,10 @@
 
 
 
-              <p>  <button (click)="increment(cartItem.id)" style="padding: 2px 7px;background-color: white;color: black;border-radius: 1px">+</button> {{cartItem.augemente}}     <span  style="padding: 2px 7px;background-color: white;color: black;border-radius: 1px" (click)="decrement(cartItem.id)">-</span></p>
+            Quantite  <p>   <button (click)="increment(cartItem.id)" style="padding: 2px 9px;background-color: white;color: black;border-radius: 1px">+</button> {{cartItem.augemente}}
+
+                <span  style="padding: 0.1px 10px;background-color: white;color: black;border-radius: 1px" (click)="decrement(cartItem.id)">-</span></p>
+
             <button (click)="removeFromCart(cartItem.id)" class="remove-button">
               <i class="fa-solid fa-trash"></i> Retirer
             </button>
@@ -78,12 +78,12 @@
 </div>
 <p style="font-family:sans-serif;font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores debitis delectus dolor ea et minus non quam quasi quod.</p>
 
-   <button class="btn"> Commander <i class="fa-solid fa-thumbs-up"></i> </button>  &nbsp;&nbsp;&nbsp; <button class="btn2"> Annuler </button>
+   <button (click)="messages()" class="btn"> Commander <i class="fa-solid fa-thumbs-up"></i> </button>  &nbsp;&nbsp;&nbsp; <button class="btn2"> Annuler </button>
 
  </dialog>
-<p-splitter [panelSizes]="[20, 80]" [style]="{ height: 'calc(100vh - 100px)'}">
+<p-splitter  [panelSizes]="[20, 80]" [style]="{ height: 'calc(105vh - 100px)'}">
     <ng-template pTemplate>
-        <div class="w-full">
+        <div  class="w-full">
             <app-panel-menu   />
 
 

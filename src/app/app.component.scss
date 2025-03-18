@@ -2,6 +2,10 @@
     overflow: hidden;
     height: 100%;
 }
+body{ zoom: 85%;
+
+}
+
 
 .btn-shopp {
   cursor: pointer;
@@ -40,7 +44,7 @@ color: white;
 
 
 }
-.cart-item button{
+.cart-item .remove-button{
   width: 150px;
   background-color: white;
   color: black;
@@ -51,7 +55,8 @@ color: white;
 
 .flex{
 
-
+button {cursor: pointer;
+}
 
 display: flex;
 
@@ -151,7 +156,7 @@ position: relative;
 
 
 .dialogue{
-
+transition: all 1s;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -194,4 +199,22 @@ border: solid 1px black;
   width: 400px;
 
 
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-y: scroll; /* Assurez-vous que le défilement est activé */
+}
+
+
+
+.imgs{
+  color: white;
+position: absolute;
+  top: 1.9px;
+  padding: 5px;
+  background-color: white;
+  clip-path: ellipse(50% 50% at 50% 50%);
 }

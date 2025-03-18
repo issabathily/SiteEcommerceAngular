@@ -5,14 +5,14 @@ form {
     padding: 1.5rem; /* Réduction du padding vertical (avant: 2rem) */
     background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+box-shadow:  0px 0px 10px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 /* Titre */
 h2 {
     text-align: center;
-    color: #333;
+    color: black;
     margin-bottom: 1.5rem; /* Réduction (avant: 2rem) */
     font-size: 1.6rem; /* Légère réduction (avant: 1.8rem) */
     font-weight: 600;
@@ -20,24 +20,26 @@ h2 {
 
 /* Conteneur des inputs */
 .input {
+
     margin-bottom: 1rem; /* Réduction (avant: 1.5rem) */
 }
 
 /* Labels */
 label {
     display: block;
-    margin-bottom: 0.3rem; /* Réduction (avant: 0.5rem) */
-    color: #555;
+    margin-bottom: 1rem; /* Réduction (avant: 0.5rem) */
+    color: #000000;
     font-size: 0.85rem; /* Légère réduction (avant: 0.9rem) */
     font-weight: 500;
     text-transform: uppercase;
+     margin-top: 1rem;
 }
 
 /* Inputs et textarea */
 input, textarea {
     width: 100%;
     padding: 0.6rem; /* Réduction (avant: 0.8rem) */
-    border: 1px solid #ddd;
+    border: 1px solid #c5bbbb;
     border-radius: 5px;
     font-size: 0.95rem; /* Légère réduction (avant: 1rem) */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
